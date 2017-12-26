@@ -10,6 +10,7 @@ namespace UnityEngine.XR.iOS
    
 		public Transform DoorToVirtual;
         public Transform DoorToOther;
+        public Transform DoorToReality;
         public GameObject PortalCam;
         public GameObject ballPrefab;
         public Transform ballSpawn;
@@ -28,6 +29,7 @@ namespace UnityEngine.XR.iOS
                         foreach (var hitResult in hitResults) {
                             DoorToVirtual.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
                             DoorToVirtual.rotation = UnityARMatrixOps.GetRotation (hitResult.worldTransform);
+                
                             StartCoroutine(ScaleUp(DoorToVirtual.gameObject, 2f));
                             DoorToVirtual.gameObject.SetActive (true);
                             Debug.Log(point.y);
@@ -40,6 +42,7 @@ namespace UnityEngine.XR.iOS
                         foreach (var hitResult in hitResults) {
                             DoorToOther.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
                             DoorToOther.rotation = UnityARMatrixOps.GetRotation (hitResult.worldTransform); 
+                           
                             StartCoroutine(ScaleUp(DoorToOther.gameObject, 2f));
                             DoorToOther.gameObject.SetActive (true);
                             Debug.Log(point.y);

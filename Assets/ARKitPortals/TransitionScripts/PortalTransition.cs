@@ -10,6 +10,8 @@ public class PortalTransition : MonoBehaviour {
 	public static event PortalTransitionAction OnPortalTransition;
 	public static string name;
 	public GameObject portalCamera;
+	public GameObject VRDoor;
+	public GameObject OtherDoor;
 	public GameObject[] staticDoors;
 	public GameObject hitTest;
 	// The main camera is surrounded by a SphereCollider with IsTrigger set to On
@@ -21,22 +23,29 @@ public class PortalTransition : MonoBehaviour {
 		
 		var BackToRealityDoor = staticDoors[0];
 		var posOne = BackToRealityDoor.transform.position = transform.position;
-		posOne[2] = posOne[2]-1;
-		BackToRealityDoor.transform.rotation = Quaternion.Inverse(transform.rotation);
+		posOne[2] = posOne[2] - 1;
+		
 		Debug.Log(name + "    "+BackToRealityDoor.transform.position);
 		switch(name){
 
 			case "VRDoor":
+				posOne[1] = 200;
 				BackToRealityDoor.SetActive(true);
 				hitTest.SetActive(false);
 			break;	
 			case "OtherDoor":
+				posOne[1] = 400;
 				BackToRealityDoor.SetActive(true);
 				hitTest.SetActive(false);
+				
 			break;
 			case "RealWorldDoor":
 				BackToRealityDoor.SetActive(false);
+				VRDoor.SetActive(false);
+				OtherDoor.SetActive(false);
 				hitTest.SetActive(true);
+				resetTracking();
+
 			break;
 		}
 	
@@ -47,5 +56,8 @@ public class PortalTransition : MonoBehaviour {
 			
 		}
 	}
-
+	public void resetTracking(){
+	ARKitWorldTrackingSessionConfiguration sessionConfig = new ARKitWorldTrackingSessionConfiguration ( UnityARAlignment.UnityARAlignmentGravity, UnityARPlaneDetection.Horizontal);
+        UnityARSessionNativeInterface.GetARSessionNativeInterface().RunWithConfigAndOptions(sessionConfig, UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors | UnityARSessionRunOption.ARSessionRunOptionResetTracking);
+	}
 }

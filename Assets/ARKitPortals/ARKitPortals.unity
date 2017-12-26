@@ -1862,7 +1862,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 396052303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.24, z: 0}
+  m_LocalPosition: {x: 0, y: -0.79, z: 0}
   m_LocalScale: {x: 1, y: 2.574146, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1761270987}
@@ -2781,6 +2781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorToVirtual: {fileID: 478030915}
   DoorToOther: {fileID: 274192020}
+  DoorToReality: {fileID: 1761270987}
   PortalCam: {fileID: 1548479742}
   ballPrefab: {fileID: 1935482614368066, guid: f8a425c50b8f04dfd8efe1103b1eaf2c, type: 2}
   ballSpawn: {fileID: 1685032592}
@@ -12552,6 +12553,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalCamera: {fileID: 1548479742}
+  VRDoor: {fileID: 478030914}
+  OtherDoor: {fileID: 274192019}
   staticDoors:
   - {fileID: 1761270986}
   - {fileID: 1761270986}
@@ -12706,8 +12709,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761270986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 2.2, z: 1}
   m_Children:
   - {fileID: 396052304}
   - {fileID: 1761906029}
@@ -12751,7 +12754,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 927800478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 574925576}
@@ -13733,7 +13736,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032494000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10000, y: 396, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_Children:
   - {fileID: 724856057}
